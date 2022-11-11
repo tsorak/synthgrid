@@ -1,0 +1,169 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+
+	touch-action: none;
+}
+
+main {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+
+	color: #fff;
+
+	user-select: none;
+	/* pointer-events: none; */
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+main .content {
+	max-width: 65ch;
+	min-height: 20rem;
+
+	backdrop-filter: blur(4px);
+	border: 1px solid #f00;
+
+	padding: 1rem;
+
+	animation: hueScroll-border infinite 10s linear;
+	animation-delay: 1s;
+
+	transition: opacity 0.5s;
+	opacity: 1;
+
+	display: flex;
+	flex-direction: column;
+}
+main .content > h1 {
+	text-align: center;
+	animation: hueScroll-text infinite 10s linear;
+	margin-bottom: 1rem;
+}
+main .content > p {
+	background: linear-gradient(#ff0, #f0f, #00f, #f0f, #ff0);
+	/* background-clip: text; */
+	font-size: 1rem;
+	line-height: 2rem;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+
+	animation: background-scroll infinite 10s linear;
+}
+main .content > h2 {
+	text-align: center;
+	/* animation: hueScroll-text infinite 10s linear;
+    margin-bottom: 1rem; */
+	margin-top: auto;
+	transition: border-color 1s, color 1s;
+	border: 1px solid #f00;
+	color: #f00;
+}
+main .content > h2:hover {
+	border: 1px solid #0f0;
+	color: #0f0;
+}
+
+.grid-container {
+	width: 100vw;
+	height: 100vh;
+
+	display: grid;
+
+	background: #141414;
+	grid-template-columns: repeat(var(--columns), 1fr);
+	grid-template-rows: repeat(var(--rows), 1fr);
+
+	/* gap: 0.5px; */
+}
+.grid-container > div {
+	padding: 1px;
+}
+.grid-container > div > div {
+	background: #000;
+
+	width: 100%;
+	height: 100%;
+}
+
+@keyframes background-scroll {
+	0% {
+		background-position-y: 0px;
+	}
+	100% {
+		background-position-y: 6rem;
+	}
+}
+@keyframes hueScroll-border {
+	0% {
+		border-color: #f00;
+	}
+	10% {
+		border-color: #ff0;
+	}
+	20% {
+		border-color: #0f0;
+	}
+	30% {
+		border-color: #0ff;
+	}
+	40% {
+		border-color: #00f;
+	}
+	50% {
+		border-color: #f0f;
+	}
+	60% {
+		border-color: #00f;
+	}
+	70% {
+		border-color: #0ff;
+	}
+	80% {
+		border-color: #0f0;
+	}
+	90% {
+		border-color: #ff0;
+	}
+	100% {
+		border-color: #f00;
+	}
+}
+@keyframes hueScroll-text {
+	0% {
+		color: #f00;
+	}
+	10% {
+		color: #ff0;
+	}
+	20% {
+		color: #0f0;
+	}
+	30% {
+		color: #0ff;
+	}
+	40% {
+		color: #00f;
+	}
+	50% {
+		color: #f0f;
+	}
+	60% {
+		color: #00f;
+	}
+	70% {
+		color: #0ff;
+	}
+	80% {
+		color: #0f0;
+	}
+	90% {
+		color: #ff0;
+	}
+	100% {
+		color: #f00;
+	}
+}
