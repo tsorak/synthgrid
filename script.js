@@ -7,9 +7,9 @@ function genGridItems(amount) {
 	for (let i = 0; i < amount; i++) {
 		const tile = document.createElement("div");
 		tile.onpointerenter = () => {
-			const RHEX = "#" + Math.floor(Math.random() * 16777215).toString(16);
+			const RHSL = `hsl(${Math.round(Math.random() * 360)}, 100%, 50%)`;
 			tile.style.transition = "";
-			tile.style.background = RHEX;
+			tile.style.background = RHSL;
 		};
 		tile.onpointerleave = () => {
 			if (config.fade) {
